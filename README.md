@@ -12,7 +12,7 @@ if using Deno as a run time, execute using the code below for example
 
 ## Deno external packages
 
-Looks like deno does not have a package manager as in _npm install_. Instead you add the url of where the package is hosted and it is downloaded on the fly and stored to cache. NPM on the other hand stores the packages on local disk.
+Looks like deno does not have a package manager as in _npm install_. Instead you add the url of where the package is hosted and it is downloaded on the fly and stored to cache. NPM on the other hand stores the packages on local disk. The nice thing about this is that we never have to manage local dependencies, so no need to worry about version of packages managed in a package.json file.
 
 # Deno WebServer
 
