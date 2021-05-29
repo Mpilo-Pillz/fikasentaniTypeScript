@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std/http/server.ts";
-const server = serve({ port: 3000 });
+const server = serve({ port: 5000 });
 
 /****
  * Below is an async iterable

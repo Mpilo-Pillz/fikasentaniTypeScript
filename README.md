@@ -1,6 +1,8 @@
 # fikasentaniTypeScript
 
 TypeScript learning running on Deno or Node run time.
+This repo helps me get familar with Deno while comparing it to how things would be done wit Node.
+To differentiate deno files are in **.ts** and node files are in **.js** file extension.
 
 ## Install Node or Deno
 
