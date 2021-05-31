@@ -13,8 +13,32 @@ let todos: Todo[] = [];
 router.get("/todos", (ctx) => {
   ctx.response.body = { todos: todos };
 });
-router.post("/todos", (ctx) => {});
-router.put("/todos/:todoId", (ctx) => {});
-router.delete("/todos/:todoId", (ctx) => {});
+router.post("/todos", async (ctx) => {
+  // auto body parsing if Json is detected no need to install body-parser
+  const data = await ctx.request.body();
+  // console.log("data->", data);
+  console.log("data->", data.value);
+
+  const newTodo: Todo = {
+    id: new Date().toDateString(),
+    text: "data?.value?.text",
+  };
+  todos.push(newTodo);
+  ctx.response.body = { message: "Created todo!", todo: newTodo };
+});
+router.put("/todos/:todoId", async (ctx) => {
+  const tid = ctx.params.todoId;
+  const data = await ctx.request.body();
+  const todoIndex = todos.findIndex((todo) => {
+    return todo.id === tid;
+  });
+  todos[todoIndex] = { id: todos[todoIndex].id, text: "data?.value?.text" };
+  ctx.response.body = { message: "Updated Todo!" };
+});
+router.delete("/todos/:todoId", (ctx) => {
+  const tid = ctx.params.todoId;
+  todos = todos.filter((todo) => todo.id !== tid);
+  ctx.response.body = { message: "Deleted Todo!" };
+});
 
 export default router;
