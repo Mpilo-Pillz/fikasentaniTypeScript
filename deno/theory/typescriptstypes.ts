@@ -1,6 +1,7 @@
+export type NumberOrString = number | string;
 function addOrConcat(
   input1: number | string,
-  input2: number | string,
+  input2: NumberOrString,
   resultConversion: "as-number" | "as-text"
 ): number | string {
   let result;
