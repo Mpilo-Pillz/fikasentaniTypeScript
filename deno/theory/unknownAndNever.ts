@@ -10,3 +10,14 @@ userInput = "Mpillz"; /// also fine cose we didnt know if we were gonna get a st
 if (typeof userInput === "string") {
   username = userInput;
 }
+// consider addding this to my backend
+// return type never means it never provduces a return value when you log there will be nothing logged not even undefined or null, beucase it crashes the script and never reurns the script
+function generateError(message: string, code: number): never {
+  throw { message, errorCode: code };
+}
+
+function infinieLoopNeverREturnsanything(): never {
+  while (true) {}
+}
+
+generateError("An Error occured", 500);
