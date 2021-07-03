@@ -8,3 +8,9 @@ function printResult(num: number): void {
 
 printResult(add(10, 100));
 console.log(printResult(add(10, 100))); //in JS this is undefined
+
+let combinedValues: (num1: number, num2: number) => number;
+
+combinedValues = add;
+
+console.log(combinedValues(70500, 85000));
