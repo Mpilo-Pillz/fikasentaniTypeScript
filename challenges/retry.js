@@ -1,11 +1,16 @@
-const retry = (retriesLeft, delayIncrease) => {
+// const retryPromise = new Promise((resolve, reject) => {
+//     resolve()
+// })
+const retryFetch = (retriesLeft, delayIncrease) => {
     setTimeout(() => {
         if (retriesLeft > 0) {
             console.log("retrying..." + delayIncrease);
-            retry(retriesLeft - 1, delayIncrease + retriesLeft)
+            retryFetch(retriesLeft - 1, delayIncrease * retriesLeft)
+        } else {
+            console.log("Retries exceeded..");
         }
     }, delayIncrease)
 
 }
 
-retry(3, 1000)
+retryFetch(3, 1000)
